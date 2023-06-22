@@ -6,10 +6,28 @@ body {
   text-align: center;
 }
 
-.center img {
+img {
   height: 200px;
 }
 
-.center h1 {
-  text-align: left;
+.borde {
+  border: 5px solid white
+}
+
+.col-6 {
+  text-align: center;
+}
+
+.input {
+  margin-top: 10px;
+}
+.count {
+  margin-top: 10%;
+  text-align: center;
+  font-size: 50px;
+}
+.timer {
+  margin-top: 10%;
+  text-align: center;
+  font-size: 50px;
 }
