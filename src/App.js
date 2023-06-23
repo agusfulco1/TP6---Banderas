@@ -1,17 +1,18 @@
 import './App.css';
 import axios from 'axios'
 import React, { useState, useEffect } from 'react';
-
+import Modal from "./Modal/modal"
 function App() {
   const [count, setCount] = useState(0)
   const [bandera, setBandera] = useState({})
   const [timer, setTimer] = useState(15);
   const [ref, setRef] = useState();
+  const [listaJugadores, setLista] = useState([]);
 
   const puntaje = evento => {
     evento.preventDefault();
     if (evento.target.bandera.value.toLowerCase() === bandera.name.toLowerCase()) {
-      setCount(count + 10)
+      setCount(count + 10 + timer)
     }
     else {
       setCount(count - 1)
@@ -31,7 +32,7 @@ function App() {
 
   useEffect(() => {
     setRef(setTimeout(() => {
-      if (timer > 0) {
+      if (timer > 1) {
         setTimer(t => t - 1);
       }
       else {
@@ -63,7 +64,9 @@ function App() {
             </div>
           </div>
         </div>
+        <Modal></Modal>
       </div>
+
     </body>
   );
 }
