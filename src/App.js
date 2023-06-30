@@ -1,25 +1,14 @@
 import './App.css';
 import axios from 'axios'
 import React, { useState, useEffect } from 'react';
-import Modal from "./Modal/modal"
+
 function App() {
   const [count, setCount] = useState(0)
   const [bandera, setBandera] = useState({})
   const [timer, setTimer] = useState(15);
   const [ref, setRef] = useState();
-  const [listaJugadores, setLista] = useState([]);
 
-  const puntaje = evento => {
-    evento.preventDefault();
-    if (evento.target.bandera.value.toLowerCase() === bandera.name.toLowerCase()) {
-      setCount(count + 10 + timer)
-    }
-    else {
-      setCount(count - 1)
-    }
-    clearTimeout(ref)
-    evento.target.bandera.value = ""
-  }
+  
 
   useEffect(() => {
     axios.get('https://countriesnow.space/api/v0.1/countries/flag/images')
@@ -47,20 +36,15 @@ function App() {
       <div className="container-fluid">
         <div className='row d-flex justify-content-start'>
           <div className='col-3 borde'>
-            <div className='container'>
-              <h2 className='count'>Puntaje: {count}</h2>
-            </div>  
+            <Count count={count} ></Count>  
           </div>
           <div className='col-6'>
             <img src={bandera.flag} alt="no hay bandera"></img>
-            <form onSubmit={e => puntaje(e)}>
-              <input className="input"type="text" name='bandera'></input>
-              <button>Enviar</button>
-          </form>
+            <Form count={count} setCount={setCount} timer={timer} ref={ref} bandera={bandera}></Form>
           </div>
           <div className='col-3 borde'>
-           <div className='container'>
-                <h2 className='timer'>Te quedan: {timer} segundos</h2>
+            <div className='container'>
+              <h2 className='timer'>Te quedan: {timer} segundos</h2>
             </div>
           </div>
         </div>
