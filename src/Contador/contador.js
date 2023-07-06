@@ -1,9 +1,9 @@
+import React from "react";
 
-
-function Count({props}) {
+function Count({count}) {
     return(
         <div className='container'>
-            <h2 className='count'>Puntaje: {props.count}</h2>
+            <h2 className='count'>Puntaje: {count}</h2>
         </div>
     );
 }

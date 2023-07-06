@@ -1,4 +1,6 @@
-function Form({props}) {
+import React from 'react';
+
+function Form(props) {
     const puntaje = evento => {
         evento.preventDefault();
         if (evento.target.bandera.value.toLowerCase() === props.bandera.name.toLowerCase()) {

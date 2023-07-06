@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { useState } from 'react';
 
-function MOdal() {
+function ModalFulco() {
     const [show, setShow] = useState(true);
 
     const handleClose = () => setShow(false);
@@ -36,4 +36,4 @@ function MOdal() {
     </>
     );
 }
-export default MOdal;
+export default ModalFulco;
