@@ -1,4 +1,4 @@
-import useEffect from 'react';
+import {useEffect} from 'react';
 import React from 'react';
 
 function Timer(props) {

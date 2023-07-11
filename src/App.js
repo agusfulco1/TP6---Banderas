@@ -1,7 +1,6 @@
 import './App.css';
-import axios from 'axios'
 import { useState, useEffect } from 'react';
-import React from 'react';
+import { React } from 'react';
 import Count from './Contador/Contador';
 import Bandera from './Bandera/Bandera';
 import Form from './Form/Form';
@@ -29,7 +28,7 @@ function App() {
           </div>
           <div className='col-3 borde'>
             <div className='container'>
-              <Timer timer={timer} ref={ref} setCount={setCount} count={count} setRef={setRef}></Timer>
+              <Timer timer={timer} ref={ref} setCount={setCount} count={count} setRef={setRef} setTimer={setTimer}></Timer>
             </div>
           </div>
         </div>
