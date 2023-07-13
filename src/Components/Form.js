@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Form.css'
 function Form(props) {
     const puntaje = evento => {
         evento.preventDefault();
@@ -9,17 +9,14 @@ function Form(props) {
         else {
             props.setCount(props.count - 1)
         }
-        clearTimeout(props.ref)
+        clearTimeout(props.hola)
         evento.target.bandera.value = ""
     }
     return(
-        <div className="col-6">
-            
-            <form onSubmit={e => puntaje(e)}>
-                <input className="input"type="text" name='bandera'></input>
-                <button>Enviar</button>
-            </form>
-        </div>
+        <form onSubmit={e => puntaje(e)}>
+            <input className="input"type="text" name='bandera'></input>
+            <button>Enviar</button>
+        </form>
         
     );
 }

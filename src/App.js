@@ -1,19 +1,17 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { React } from 'react';
-import Count from './Contador/Contador';
-import Bandera from './Bandera/Bandera';
-import Form from './Form/Form';
-import Timer from './Timer/Timer';
-import ModalFulco from './ModalFulco/ModalFulco';
-
-
+import Count from './Components/contador';
+import Bandera from './Components/Bandera';
+import Form from './Components/Form';
+import Timer from './Components/Timer';
+import ModalFulco from './Components/ModalFulco';
 
 function App() {
   const [count, setCount] = useState(0)
   const [bandera, setBandera] = useState({})
   const [timer, setTimer] = useState(15);
-  const [ref, setRef] = useState();
+  const [hola, setHola] = useState();
 
   return (
     <body>
@@ -24,12 +22,10 @@ function App() {
           </div>
           <div className='col-6'>
             <Bandera count={count} bandera={bandera} setBandera={setBandera} setTimer={setTimer}></Bandera>
-            <Form count={count} setCount={setCount} timer={timer} ref={ref} bandera={bandera}></Form>
+            <Form count={count} setCount={setCount} timer={timer} hola={hola} bandera={bandera}></Form>
           </div>
           <div className='col-3 borde'>
-            <div className='container'>
-              <Timer timer={timer} ref={ref} setCount={setCount} count={count} setRef={setRef} setTimer={setTimer}></Timer>
-            </div>
+              <Timer timer={timer} hola={hola} setCount={setCount} count={count} setHola={setHola} setTimer={setTimer}></Timer>
           </div>
         </div>
         <ModalFulco></ModalFulco>
