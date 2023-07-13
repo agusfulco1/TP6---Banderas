@@ -11,24 +11,30 @@ function App() {
   const [count, setCount] = useState(0)
   const [bandera, setBandera] = useState({})
   const [timer, setTimer] = useState(15);
-  const [hola, setHola] = useState();
-
+  const [hola, setHola] = useState(); //me tira error si le pongo el nombre ref
+  const [jugador, setJugador] = useState()
+  const [isOpen, setOpen] = useState(false)
   return (
     <body>
+       <ModalFulco setOpen={setOpen} setJugador={setJugador}></ModalFulco>
       <div className="container-fluid">
-        <div className='row d-flex justify-content-start'>
-          <div className='col-3 borde'>
-            <Count count={count} ></Count>  
-          </div>
-          <div className='col-6'>
-            <Bandera count={count} bandera={bandera} setBandera={setBandera} setTimer={setTimer}></Bandera>
-            <Form count={count} setCount={setCount} timer={timer} hola={hola} bandera={bandera}></Form>
-          </div>
-          <div className='col-3 borde'>
+        {isOpen ? (
+          <div className='row d-flex justify-content-start'>
+            <div className='col-3 borde'>
+              <Count count={count} ></Count>  
+            </div>
+            <div className='col-6'>
+              {jugador}
+              <Bandera count={count} bandera={bandera} setBandera={setBandera} setTimer={setTimer}></Bandera>
+              <Form count={count} setCount={setCount} timer={timer} hola={hola} bandera={bandera}></Form>
+            </div>
+            <div className='col-3 borde'>
               <Timer timer={timer} hola={hola} setCount={setCount} count={count} setHola={setHola} setTimer={setTimer}></Timer>
+            </div>
           </div>
-        </div>
-        <ModalFulco></ModalFulco>
+        ) : null}
+        
+       
       </div>
 
     </body>

@@ -4,10 +4,21 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { useState } from 'react';
 
-function ModalFulco() {
+function ModalFulco(props) {
     const [show, setShow] = useState(true);
-
-    const handleClose = () => setShow(false);
+    const [text, setText] = useState("")
+    const handleClose = () => {
+      setShow(false);
+      props.setOpen(true)
+      props.setJugador(
+        {
+          nombre: text,
+          puntaje: 0
+        }
+      )
+    }
+    
+    
   
     return (
     <>
@@ -21,6 +32,8 @@ function ModalFulco() {
             <Form.Control
             aria-label="Small"
             aria-describedby="inputGroup-sizing-sm"
+            value={text.value}
+            onChange={handleChange}
             />
         </InputGroup>
        </Modal.Body>
