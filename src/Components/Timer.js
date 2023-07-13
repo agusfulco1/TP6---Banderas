@@ -1,6 +1,8 @@
 import {useEffect} from 'react';
 import React from 'react';
 import "./Timer.css"
+import PropTypes from 'prop-types';
+
 function Timer(props) {
     useEffect(() => {
         props.setHola(setTimeout(() => {
@@ -17,5 +19,12 @@ function Timer(props) {
         <h2 className='timer'>Te quedan: {props.timer} segundos</h2>
     );
 }
-
+Timer.PropTypes = {
+  setTimer: PropTypes.func,
+  timer: PropTypes.number,
+  hola: PropTypes.func,
+  setCount: PropTypes.func,
+  setHola: PropTypes.func, 
+  count: PropTypes.number,
+}
 export default Timer;

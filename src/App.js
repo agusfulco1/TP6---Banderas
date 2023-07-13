@@ -6,6 +6,7 @@ import Bandera from './Components/Bandera';
 import Form from './Components/Form';
 import Timer from './Components/Timer';
 import ModalFulco from './Components/ModalFulco';
+import Jugador from './Components/Jugador'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,15 +17,15 @@ function App() {
   const [isOpen, setOpen] = useState(false)
   return (
     <body>
-       <ModalFulco setOpen={setOpen} setJugador={setJugador}></ModalFulco>
+       <ModalFulco setOpen={setOpen} setJugador={setJugador} jugador={jugador}></ModalFulco>
       <div className="container-fluid">
         {isOpen ? (
           <div className='row d-flex justify-content-start'>
             <div className='col-3 borde'>
+              <Jugador jugador={jugador}></Jugador>
               <Count count={count} ></Count>  
             </div>
             <div className='col-6'>
-              {jugador}
               <Bandera count={count} bandera={bandera} setBandera={setBandera} setTimer={setTimer}></Bandera>
               <Form count={count} setCount={setCount} timer={timer} hola={hola} bandera={bandera}></Form>
             </div>
@@ -33,8 +34,6 @@ function App() {
             </div>
           </div>
         ) : null}
-        
-       
       </div>
 
     </body>

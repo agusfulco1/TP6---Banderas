@@ -10,12 +10,16 @@ function ModalFulco(props) {
     const handleClose = () => {
       setShow(false);
       props.setOpen(true)
+      console.log(text)
       props.setJugador(
         {
           nombre: text,
           puntaje: 0
         }
       )
+    }
+    const handleChange = (event) => {
+      setText(event.target.value)
     }
     
     
@@ -32,8 +36,8 @@ function ModalFulco(props) {
             <Form.Control
             aria-label="Small"
             aria-describedby="inputGroup-sizing-sm"
-            value={text.value}
             onChange={handleChange}
+            value={text}
             />
         </InputGroup>
        </Modal.Body>
