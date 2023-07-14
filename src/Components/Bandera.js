@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
 import './Bandera.css';
+import PropTypes from 'prop-types';
 
 function Bandera(props) {
 
@@ -18,4 +19,10 @@ function Bandera(props) {
     )
 }
 
+Bandera.propTypes = {
+  count: PropTypes.number,
+  bandera: PropTypes.object,
+  setBandera: PropTypes.func,
+  setTimer: PropTypes.func
+}
 export default Bandera;

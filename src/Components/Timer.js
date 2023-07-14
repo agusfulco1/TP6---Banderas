@@ -19,7 +19,7 @@ function Timer(props) {
         <h2 className='timer'>Te quedan: {props.timer} segundos</h2>
     );
 }
-Timer.PropTypes = {
+Timer.propTypes = {
   setTimer: PropTypes.func,
   timer: PropTypes.number,
   hola: PropTypes.func,

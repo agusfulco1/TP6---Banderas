@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 function ModalFulco(props) {
     const [show, setShow] = useState(true);
@@ -52,5 +53,11 @@ function ModalFulco(props) {
     </Modal>
     </>
     );
+}
+
+ModalFulco.propTypes = {
+  setOpen: PropTypes.func,
+  setJugador: PropTypes.func,
+  jugador: PropTypes.object
 }
 export default ModalFulco;

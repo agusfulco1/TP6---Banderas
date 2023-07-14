@@ -1,5 +1,7 @@
 import React from 'react';
 import './Form.css'
+import PropTypes from 'prop-types';
+
 function Form(props) {
     const puntaje = evento => {
         evento.preventDefault();
@@ -20,5 +22,11 @@ function Form(props) {
         
     );
 }
-
+Form.propTypes = {
+    count: PropTypes.number,
+    setCount: PropTypes.func,
+    timer: PropTypes.number,
+    hola: PropTypes.func,
+    bandera: PropTypes.object
+}
 export default Form;

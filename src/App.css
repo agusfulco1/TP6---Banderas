@@ -6,7 +6,7 @@ body {
 }
 
 .borde {
-  border: 5px solid white
+  border: 5px solid white dashed
 }
 
 .col-6 {
@@ -21,7 +21,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* vertically aligns items */
   align-items: center;
-  /* horizontally aligns items */
+  border: 2px rgba(255, 145, 1, 0.5) dashed
 }
