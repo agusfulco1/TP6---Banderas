@@ -17,7 +17,7 @@ function App() {
   const [isOpen, setOpen] = useState(false)
   return (
     <body>
-       <ModalFulco setOpen={setOpen} setJugador={setJugador} jugador={jugador}></ModalFulco>
+      <ModalFulco setOpen={setOpen} setJugador={setJugador} jugador={jugador}></ModalFulco>
       <div className="container-fluid">
         {isOpen ? (
           <div className='row d-flex justify-content-start'>

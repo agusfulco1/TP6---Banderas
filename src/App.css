@@ -2,6 +2,7 @@ body {
   background-image: url("image.png");
   background-size:cover;
   background-repeat: no-repeat;
+  margin-top: 10px;
 
 }
 
@@ -22,5 +23,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px rgba(255, 145, 1, 0.5) dashed
+  font-family: 'Ysabeau Office', sans-serif;
+  border: 2px rgba(255, 145, 1, 0.5) dashed;
+  color:rgb(253, 143, 0);
+  text-shadow: 1px 1px 1px orange;
 }

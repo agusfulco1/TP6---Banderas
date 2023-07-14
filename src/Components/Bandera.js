@@ -11,6 +11,7 @@ function Bandera(props) {
           .then(function (response) {
             const banderaRandom = response.data.data[Math.floor(Math.random() * response.data.data.length)]
             props.setBandera(banderaRandom);
+            props.setTimer(t => t-1)
             props.setTimer(15)
           })
       }, [props.count])

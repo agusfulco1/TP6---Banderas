@@ -11,7 +11,6 @@ function ModalFulco(props) {
     const handleClose = () => {
       setShow(false);
       props.setOpen(true)
-      console.log(text)
       props.setJugador(
         {
           nombre: text,

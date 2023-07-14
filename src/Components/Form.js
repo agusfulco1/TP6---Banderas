@@ -17,7 +17,7 @@ function Form(props) {
     return(
         <form onSubmit={e => puntaje(e)}>
             <input className="input"type="text" name='bandera'></input>
-            <button>Enviar</button>
+            <button className='boton'>Enviar</button>
         </form>
         
     );
@@ -26,7 +26,7 @@ Form.propTypes = {
     count: PropTypes.number,
     setCount: PropTypes.func,
     timer: PropTypes.number,
-    hola: PropTypes.func,
+    hola: PropTypes.number,
     bandera: PropTypes.object
 }
 export default Form;

@@ -22,7 +22,7 @@ function Timer(props) {
 Timer.propTypes = {
   setTimer: PropTypes.func,
   timer: PropTypes.number,
-  hola: PropTypes.func,
+  hola: PropTypes.number,
   setCount: PropTypes.func,
   setHola: PropTypes.func, 
   count: PropTypes.number,
